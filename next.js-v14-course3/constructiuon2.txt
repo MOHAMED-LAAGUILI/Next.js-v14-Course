@@ -1,0 +1,11 @@
+// Meta data & SEO 
+
+
+// meta data built in function to overwrite the default meta data in layout
+apply the bellow built in function in any page js file
+
+export function generateMetadata({params}) {
+return{
+  title:  params.productSlug,
+}
+}

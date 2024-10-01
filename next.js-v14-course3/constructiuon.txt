@@ -1,0 +1,70 @@
+------------------------------------to create a next.js App------------------------------------
+npx create-next-app@latest
+
+then 
+enter name of the project only lower cases and no spaces
+No
+yes or no that depends on are u gonna use ts or not
+yes or no that depend are y gonna use tailwind or other Ui lib
+yes
+yes or not  that depend if u gonna use next built in routers or u gonna create ur own custom ones
+no
+
+------------------------------------to avoid any missing dependencies or modules/classes------------------------------------
+npm install @babel/core
+npm install eslint-config-next@latest
+npm update next @babel/preset-env @babel/preset-typescript
+npm install --save-dev @babel/preset-typescript
+
+
+------------------------------------to install shadcn UI------------------------------------
+shadcn ui doc
+https://ui.shadcn.com/docs/installation
+
+tailwind doc
+https://tailwindcss.com/docs/installation/using-postcss
+
+npx shadcn@latest init -d
+
+
+if u have any errs or missing lib of tailwind validations
+postcss.config.js tailwind.config.js if exist and delete them 
+and run
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+
+Configure your template paths
+Add the paths to all of your template files in your tailwind.config.js file.
+
+tailwind.config.js
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s layers to your main CSS file to the top file.
+
+globals.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+now re run
+npx shadcn@latest init -d
+
+to add extra shadcn ui components
+https://ui.shadcn.com/docs/components
+
+
+
+------------------------------------start the view ------------------------------------
+npm run dev
+

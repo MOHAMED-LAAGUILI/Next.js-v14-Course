@@ -1,0 +1,40 @@
+// routing & netsted routing
+[blogid]
+/blog/[blogid]
+we telling next this is a params /blog/2
+
+_contact
+we telleng next to this is not a route by adding undersore _ before the name 
+
+
+// grouped routing
+adding to folder name () 
+(user)
+
+its groups the routes and uses sub routes in the user folder such as login logout register etc...
+http://localhost:3000/login
+http://localhost:3000/register
+instead of
+http://localhost:3000/user/login
+
+// Defaults 
+page.js considers as default index
+
+we can custimize our 404 err handling page not found by adding 
+not-found.js  file to the src dir
+
+
+
+// layout and nested layout
+
+https://www.youtube.com/watch?v=7EbC_us9U60&list=PLm_sigBWSRY0jPl8kviEx8KUHl8aSJRtU&index=10&ab_channel=JamaouiMouad 
+
+we define a lyout for the register parent that has 2 whildren a and b 
+the layout of register parent inherit Layout from the main layout in the src/app folder
+thats mean register is a child if app in result a and b folders will use there parent layout wich is register
+lets say we have another folder c and we dont want to apply layyout to it but it in the same dir and takes layout
+we add a group layout using ()
+ (with-layout) create that folder with any name surrounded with () and mov the layout to it and the folders/routes that u wanna use that layout
+
+
+
