@@ -1,0 +1,71 @@
+//catch all routes
+
+
+uses whene we have too much pages and sub pages/routes
+Example
+//dashboard
+//dashboard/analitics
+//dashboard/analitics/overview
+//dashboard/settings
+//dashboard/user/settings/delete
+//dashboard/user/settings/delete/confirm/complete
+
+AND WE CREATE A single costumasable page that work for all routes and is dynamicly changing
+
+by namming the folder like this[... ]
+example
+[...DashboardPages]
+
+
+example of the grouped routes
+
+function displayPage(DashboardPages) {
+  if (DashboardPages.length === 1) {
+    switch (DashboardPages[0]) {
+      case 'settings':
+        return <SettingsPage />;
+      case 'profile':
+        return <ProfilePage />;
+      default:
+        return <NotFoundPage />;
+    }
+  } else if (DashboardPages.length === 2) {
+    switch (DashboardPages[1]) {
+      case 'destroy':
+        return <DestroyPage />;
+      case 'edit':
+        return <EditPage />;
+      default:
+        return <NotFoundPage />;
+    }
+  } else if (DashboardPages.length === 3) {
+    switch (DashboardPages[2]) {
+      case 'confirm':
+        return <ConfirmPage />;
+      case 'cancel':
+        return <CancelPage />;
+      default:
+        return <NotFoundPage />;
+    }
+  } else {
+    return <NotFoundPage />;
+  }
+}
+
+export default function DashboardPages({ params }) {
+  return (
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        {displayPage(params.DashboardPages)}
+      </main>
+    </div>
+  );
+}
+
+//Layout and Template file
+We know that layout is shared within the folder is in and the sub folder and all changes shared as as one  
+to add a folder that u dont want to apply that layout to it u just sply create a private folder named ()  like (user) and add the routes on it and it own layout
+
+well 
+Templete nearly do the oppisite
+its shared whting the the folder but the component changes it resest to default status and dont save it
